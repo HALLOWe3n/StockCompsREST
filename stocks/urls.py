@@ -1,7 +1,10 @@
-from django.urls import path
+from rest_framework import routers
 
-from stocks.views import HelloUserAPIView
+from stocks.views import StockInformationAPIView, StockInformationModelViewSet
 
-urlpatterns = [
-    path('hello/', HelloUserAPIView.as_view(), name='hello_path')
-]
+route = routers.SimpleRouter()
+route.register('list', StockInformationModelViewSet, basename='list_urls')
+
+print(route.urls)
+urlpatterns = route.urls
+

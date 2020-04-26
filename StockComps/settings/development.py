@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from .base import *
 
 
@@ -18,4 +20,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
 }

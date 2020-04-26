@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 from .base import *
 
 
@@ -18,4 +20,10 @@ DATABASES = {
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': os.getenv('DATABASE_PORT'),
     }
+}
+
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
 }

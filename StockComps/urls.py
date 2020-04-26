@@ -30,5 +30,5 @@ urlpatterns += [
 
 # apps urls...
 urlpatterns += [
-    path('stock/', include('stocks.urls'))
+    path('api/stock/<version>/', include('stocks.urls'))
 ]
