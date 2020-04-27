@@ -24,11 +24,11 @@ urlpatterns = [
 
 # libs urls...
 urlpatterns += [
-    path('api/token/', jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path('api/refresh/token/', jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
+    path('api/<version>/token/', jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path('api/<version>/refresh/token/', jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
 ]
 
 # apps urls...
 urlpatterns += [
-    path('api/stock/<version>/', include('stocks.urls'))
+    path('api/<version>/stock/', include('stocks.urls'))
 ]
