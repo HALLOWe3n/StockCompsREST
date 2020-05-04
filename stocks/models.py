@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Stock(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     symbol = models.CharField(max_length=10)
     information = models.CharField(max_length=255)
     last_refresh = models.DateTimeField(auto_now_add=True)
